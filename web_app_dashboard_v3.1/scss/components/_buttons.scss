@@ -1,0 +1,44 @@
+.close-alert {
+  color: white;
+  background-color: $base;
+  border-style: none;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1em;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.button-primary {
+  width: 80%;
+  margin: 1em auto;
+  font-size: 0.6em;
+  padding: 1em;
+  background-color: $base;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  &:hover {
+    background-color: $base-hover;
+  }
+  &:nth-child(1) {
+    width: 37.5%;
+    margin-right: 0.5em;
+  }
+}
+
+.button-disabled {
+  width: 37.5%;
+  margin-left: 0.5em;
+  padding: 1em;
+  font-size: 0.6em;
+  background-color: $disabled;
+  color: white;
+  border-radius: 5px;
+  outline: none;
+  &:hover {
+    background-color: $disabled-hover;
+  }
+}

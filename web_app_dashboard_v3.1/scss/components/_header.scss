@@ -1,0 +1,19 @@
+// Header ---------
+
+.header {
+  @include flex($dir: row, $just: flex-end) {
+  }
+  background-color: $base;
+  padding: 0.25em 0;
+}
+
+.notifications {
+  display: none;
+}
+
+.profile {
+  border-left: 0.5px solid $base-main-bkg;
+  height: 70%;
+  margin-top: 0.25em;
+  padding-bottom: 0.15em;
+}

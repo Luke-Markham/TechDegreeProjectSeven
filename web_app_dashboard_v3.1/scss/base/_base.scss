@@ -1,0 +1,22 @@
+body {
+  font-family: $font-main;
+  cursor: default;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+footer {
+  height: 2em;
+}

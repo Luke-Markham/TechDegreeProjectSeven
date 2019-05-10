@@ -1,0 +1,77 @@
+// navigation ----------------------------
+
+.nav {
+  @include flex($just: center, $align-i: center) {
+  }
+}
+
+// main-content ----------------------------
+
+// main-content-header--
+
+.main-content-header {
+  @include flex($just: space-between) {
+  }
+  height: 3em;
+  .main-header-search {
+    @include flex($just: flex-end, $align-i: center) {
+    }
+  }
+}
+
+.alert-message {
+  @include flex($just: space-between) {
+  }
+}
+
+// traffic ul--
+.timeline {
+  @include flex($just: flex-end) {
+  }
+}
+
+// social icons--
+.social-image {
+  @include flex($just: center, $align-i: center) {
+  }
+}
+
+// social media--
+.social-container-wrapper {
+  @include flex($dir: column) {
+  }
+}
+.social-container {
+  @include flex($just: space-around, $align-i: center) {
+  }
+}
+
+// members--
+
+.member-1,
+.member-2,
+.member-3,
+.member-4,
+.member-5 {
+  @include flex() {
+  }
+}
+
+// message user--
+
+.message-form {
+  @include flex($dir: column, $align-i: center) {
+  }
+}
+
+// settings;
+.settings-wrapper {
+  @include flex($dir: column) {
+  }
+}
+
+.slider-1,
+.slider-2 {
+  @include flex($align-i: center) {
+  }
+}

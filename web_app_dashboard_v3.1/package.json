@@ -1,0 +1,27 @@
+{
+  "name": "s",
+  "version": "1.0.0",
+  "description": "npm package",
+  "main": "index.js",
+  "scripts": {
+    "test": "ok"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luke-Markham/TechDegreeProjectSeven.git"
+  },
+  "keywords": [
+    "ok"
+  ],
+  "author": "luke m",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Luke-Markham/TechDegreeProjectSeven/issues"
+  },
+  "homepage": "https://github.com/Luke-Markham/TechDegreeProjectSeven#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.2"
+  }
+}

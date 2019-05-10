@@ -1,0 +1,30 @@
+// typograhpy -------------
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800");
+
+$font-main: "Open Sans", sans-serif;
+
+// colors -----------------
+
+// main theme colors --
+$base: #7477bf;
+$base-hover: lighten($base, 10%);
+$base-light: lighten($base, 25%);
+$base-dark: darken($base, 25%);
+$base-main-bkg: #ffffff;
+$base-secondary-bkg: #fbfbfb;
+$border-color: #dbdbdb;
+$complement: complement($base);
+$complement-light: lighten($complement, 40%);
+$complement-dark: darken($complement, 10%);
+$green: #81c98f;
+$disabled: #b2b2b2;
+$disabled-hover: darken($disabled, 10%);
+
+// text color -----------------
+
+$text-color: #8f8f8f;
+
+// icon colors --
+
+$color-icon-pre-hov: #f7f5e9;
+$color-icon-post-hov: #ffffff;

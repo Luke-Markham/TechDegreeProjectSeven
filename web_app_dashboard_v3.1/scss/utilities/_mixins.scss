@@ -1,0 +1,56 @@
+// flex ----
+@mixin flex(
+  $disp: flex,
+  $dir: null,
+  $wrap: null,
+  $just: null,
+  $align-i: null,
+  $align-c: null,
+  $flex-b: null
+) {
+  display: $disp;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $align-i;
+  align-content: $align-c;
+  flex-basis: $flex-b;
+  @content;
+}
+
+// media queries ----
+
+@mixin mq($break) {
+  @if $break == "small" {
+    @media (min-width: $brk-s) {
+      @content;
+    }
+  } @else if $break == "medium" {
+    @media (min-width: $brk-m) {
+      @content;
+    }
+  } @else if $break == "large" {
+    @media (min-width: $brk-l) {
+      @content;
+    }
+  }
+}
+
+// profile pics
+
+@mixin profilePic {
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 0.5em;
+  width: 35px;
+  height: 35px;
+  @content;
+}
+
+// common bkg & border combo ---
+@mixin bkgNborder {
+  background-color: $base-secondary-bkg;
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  @content;
+}

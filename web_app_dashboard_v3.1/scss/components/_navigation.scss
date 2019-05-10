@@ -1,0 +1,12 @@
+// navigation ---------------------
+
+.nav {
+  background-color: $base-dark;
+  padding: 0.25em 0 0.09em 0;
+}
+
+.nav-icon:hover {
+  box-shadow: inset 0px -2px $green;
+  transform: scale(1.1);
+  // border-bottom: 2px inset red;
+}

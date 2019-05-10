@@ -1,0 +1,60 @@
+// header images-------------
+
+.notify-bell {
+  margin-top: 0.8em;
+  margin-right: 0.5em;
+  width: 20px;
+  height: 20px;
+  fill: white;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.profile-pic {
+  @include profilePic {
+    vertical-align: middle;
+  }
+}
+
+// nav icons-------------
+
+.icon-dashboard,
+.icon-members,
+.icon-stats,
+.icon-settings {
+  width: 25px;
+  height: 25px;
+  fill: $base-secondary-bkg;
+  padding: 0.25em 0.5em;
+  &:hover {
+    fill: white;
+  }
+}
+
+// social media icons-------------
+.social-image {
+  background-color: $base;
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+}
+
+#Layer_1 {
+  padding-top: 0.25em;
+}
+
+.icon-twitter,
+.icon-google,
+.icon-facebook {
+  width: 35px;
+  height: 35px;
+  fill: white;
+}
+
+// member images-------------
+
+img[src^="images/member"] {
+  @include profilePic {
+  }
+}

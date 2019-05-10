@@ -1,0 +1,119 @@
+// Header typography ----------
+
+.shop-name {
+  margin: 0.9em auto 0 0.5em;
+  color: white;
+  font-style: italic;
+  font-size: 1em;
+  .your {
+    font-weight: 800;
+  }
+  .shop {
+    font-weight: 300;
+  }
+}
+
+.profile-name {
+  color: white;
+  margin-right: 0.75em;
+  font-size: 0.75em;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 0.75em;
+  &:hover {
+    color: $green;
+  }
+}
+
+// Main-content typography ----------
+
+.headline {
+  display: inline-block;
+  font-size: 1em;
+  padding: 0.25em 1em 0 1em;
+  color: $text-color;
+  font-weight: 400;
+}
+
+.alert-message p {
+  font-size: 0.6em;
+  color: white;
+  padding: 0.75em;
+  margin: 0.25em 0em;
+  & a:hover {
+    color: $green;
+  }
+}
+
+.section-h3 {
+  margin-left: 1em;
+  font-size: 1em;
+  color: $text-color;
+  font-weight: 400;
+}
+
+.time {
+  font-weight: 800;
+  color: $text-color;
+}
+
+.social-text {
+  & p {
+    font-size: 1em;
+    color: $base;
+    font-weight: 700;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  & p ~ p {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 1em;
+    color: black;
+  }
+}
+
+// members--
+
+.members-text {
+  & p {
+    font-size: 0.8em;
+    margin: 0 0.5em;
+  }
+  & a {
+    margin: 0 0 0 0.75em;
+    font-size: 0.75em;
+    color: $base;
+  }
+  & a:hover {
+    color: $green;
+  }
+}
+
+// settings--
+.settings label {
+  font-size: 0.75em;
+}
+
+.slider {
+  padding-top: 0.5em;
+}
+.slider-on {
+  display: none;
+  position: absolute;
+  font-size: 0.8em;
+  padding: 0 0 0 0.75em;
+  margin: 0;
+  font-weight: 700;
+  color: white;
+}
+.slider-off {
+  display: inline-block;
+  position: absolute;
+  font-size: 0.8em;
+  padding: 0 0 0 2.75em;
+  margin: 0;
+  font-weight: 700;
+}
