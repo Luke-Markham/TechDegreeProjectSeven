@@ -1,5 +1,3 @@
-// search bar -----
-
 .search-bar {
   border-radius: 2.5px;
   border: 1px solid $border-color;
@@ -18,6 +16,12 @@
     text-align: right;
     font-size: 0.75em;
   }
+  @include mq(medium) {
+    width: 50%;
+    margin-right: 2em;
+    padding: 0.5em;
+    border: 1px solid $border-color;
+  }
 }
 
 .user-search,
@@ -26,17 +30,13 @@
   @include bkgNborder {
   }
   font-size: 0.75em;
-  width: 80%;
+  width: 90%;
   margin: 0.5em auto;
   padding: 0.5em 0 0.5em 0.5em;
   outline: none;
 }
 .user-search {
   padding: 1em 0 1em 0.5em;
-}
-.message-area {
-  height: 50%;
-  padding: 0.5em 0 0.5em 0.5em;
 }
 
 // sliders--

@@ -188,9 +188,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -198,9 +198,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type=button]::-moz-focus-inner,
-[type=reset]::-moz-focus-inner,
-[type=submit]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -209,9 +209,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type=button]:-moz-focusring,
-[type=reset]:-moz-focusring,
-[type=submit]:-moz-focusring {
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -261,8 +261,8 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type=checkbox],
-[type=radio] {
+[type="checkbox"],
+[type="radio"] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -272,8 +272,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type=number]::-webkit-inner-spin-button,
-[type=number]::-webkit-outer-spin-button {
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -281,7 +281,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -291,7 +291,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type=search]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -346,7 +346,8 @@ body {
 ul {
   list-style-type: none;
   font-size: 0.75em;
-  margin-right: 0.5em;
+  margin-right: 1.5em;
+  padding: 0em;
 }
 
 a {
@@ -385,9 +386,23 @@ footer {
   padding: 0.25em 0 0.09em 0;
 }
 
+@media (min-width: 768px) {
+  .nav-icon {
+    margin: 0.5em 0;
+    width: 85%;
+    padding-left: 0.3em;
+    padding-top: 0.25em;
+  }
+}
+
 .nav-icon:hover {
   box-shadow: inset 0px -2px #81c98f;
   transform: scale(1.1);
+}
+@media (min-width: 768px) {
+  .nav-icon:hover {
+    box-shadow: inset 3px 0px #81c98f;
+  }
 }
 
 .main-content {
@@ -397,9 +412,33 @@ footer {
 .daily-traffic,
 .mobile-users,
 .recent-activity,
-.new-members {
+.new-members,
+.message {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
+}
+
+@media (min-width: 768px) {
+  .message {
+    border: none;
+  }
+}
+
+.message-form {
+  margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+  .message-form {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .settings,
+  .mobile-users,
+  .recent-activity {
+    border-left: 1px solid #dbdbdb;
+  }
 }
 
 .main-header-search {
@@ -426,15 +465,25 @@ footer {
   border-radius: 15px;
 }
 .time:hover {
-  background-color: #81c98f;
-  color: white;
+  transform: scale(1.1);
 }
 
 .social-container {
   background-color: #fbfbfb;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
-  margin: 0 1em 1em 1em;
+  margin: 1em auto;
+  width: 90%;
+}
+@media (min-width: 768px) {
+  .social-container {
+    margin: 0.5em;
+    padding-left: 0.25em;
+  }
+}
+
+.social-container-wrapper {
+  margin-bottom: 1em;
 }
 
 .new-members {
@@ -462,7 +511,8 @@ footer {
 }
 
 .settings-button {
-  text-align: center;
+  width: 90%;
+  margin: 1em auto 0 auto;
 }
 
 .slider-1,
@@ -512,6 +562,12 @@ footer {
   color: #8f8f8f;
   font-weight: 400;
 }
+@media (min-width: 768px) {
+  .headline {
+    padding: 0.25em 1em 0 1.25em;
+    font-size: 1.2em;
+  }
+}
 
 .alert-message p {
   font-size: 0.6em;
@@ -535,6 +591,12 @@ footer {
   color: #8f8f8f;
 }
 
+@media (min-width: 768px) {
+  .social-text {
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+}
 .social-text p {
   font-size: 1em;
   color: #7477bf;
@@ -546,7 +608,7 @@ footer {
   font-size: 2.5em;
   font-weight: 300;
   margin-top: 0;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   color: black;
 }
 
@@ -603,25 +665,26 @@ footer {
 }
 
 .button-primary {
-  width: 80%;
-  margin: 1em auto;
+  width: 90%;
+  margin: 1em auto 0 auto;
   font-size: 0.6em;
   padding: 1em;
   background-color: #7477bf;
   color: white;
   border-radius: 5px;
   outline: none;
+  align-self: flex-end;
 }
 .button-primary:hover {
   background-color: #9799cf;
 }
 .button-primary:nth-child(1) {
-  width: 37.5%;
-  margin-right: 0.5em;
+  width: 47.5%;
+  margin: 0;
 }
 
 .button-disabled {
-  width: 37.5%;
+  width: 47.5%;
   margin-left: 0.5em;
   padding: 1em;
   font-size: 0.6em;
@@ -644,6 +707,41 @@ footer {
 
 .main-content {
   grid-area: main-content;
+  display: grid;
+}
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-columns: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-content-header,
+  .alert-message,
+  .traffic,
+  .social-media {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (min-width: 768px) {
+  .daily-traffic,
+  .new-members,
+  .message {
+    grid-column: 1 / span 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .mobile-user,
+  .recent-activity,
+  .settings {
+    grid-column: 2 / span 1;
+  }
+}
+
+.footer {
+  grid-area: footer;
 }
 
 .grid-container {
@@ -652,11 +750,25 @@ footer {
   grid-template-rows: auto;
   grid-template-areas: "header " "nav" "main-content";
 }
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: "header header" "nav main-content" "nav footer";
+  }
+}
 
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 .main-content-header {
@@ -697,6 +809,13 @@ footer {
   align-items: center;
 }
 
+@media (min-width: 768px) {
+  .social-container-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .member-1,
 .member-2,
 .member-3,
@@ -708,7 +827,12 @@ footer {
 .message-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
 }
 
 .settings-wrapper {
@@ -720,6 +844,11 @@ footer {
 .slider-2 {
   display: flex;
   align-items: center;
+}
+
+.settings-button {
+  display: flex;
+  justify-content: space-between;
 }
 
 .notify-bell {
@@ -797,6 +926,14 @@ img[src^="images/member"] {
   text-align: right;
   font-size: 0.75em;
 }
+@media (min-width: 768px) {
+  .search-bar {
+    width: 50%;
+    margin-right: 2em;
+    padding: 0.5em;
+    border: 1px solid #dbdbdb;
+  }
+}
 
 .user-search,
 .message-area,
@@ -805,7 +942,7 @@ img[src^="images/member"] {
   border: 1px solid #dbdbdb;
   border-radius: 5px;
   font-size: 0.75em;
-  width: 80%;
+  width: 90%;
   margin: 0.5em auto;
   padding: 0.5em 0 0.5em 0.5em;
   outline: none;
@@ -813,11 +950,6 @@ img[src^="images/member"] {
 
 .user-search {
   padding: 1em 0 1em 0.5em;
-}
-
-.message-area {
-  height: 50%;
-  padding: 0.5em 0 0.5em 0.5em;
 }
 
 /* The switch - the box around the slider */
@@ -878,6 +1010,36 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.widget-container-full,
+.widget-container-half {
+  margin: 0 auto;
+  width: 95vw;
+}
+
+@media (min-width: 768px) {
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
+  }
+}
+#traffic-chart {
+  width: 90vw;
+}
+
+#daily-chart,
+#mobile-chart {
+  width: 90vw;
+}
+@media (min-width: 768px) {
+  #daily-chart,
+  #mobile-chart {
+    width: 45vw;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

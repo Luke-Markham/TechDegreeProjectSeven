@@ -20,7 +20,7 @@ $green: #81c98f;
 $disabled: #b2b2b2;
 $disabled-hover: darken($disabled, 10%);
 
-// text color -----------------
+// text color --
 
 $text-color: #8f8f8f;
 
@@ -28,3 +28,8 @@ $text-color: #8f8f8f;
 
 $color-icon-pre-hov: #f7f5e9;
 $color-icon-post-hov: #ffffff;
+
+//  Media Queries -----------------
+
+$brk-s: 200px;
+$brk-m: 768px;

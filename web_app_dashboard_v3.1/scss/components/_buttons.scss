@@ -12,25 +12,26 @@
 }
 
 .button-primary {
-  width: 80%;
-  margin: 1em auto;
+  width: 90%;
+  margin: 1em auto 0 auto;
   font-size: 0.6em;
   padding: 1em;
   background-color: $base;
   color: white;
   border-radius: 5px;
   outline: none;
+  align-self: flex-end;
   &:hover {
     background-color: $base-hover;
   }
   &:nth-child(1) {
-    width: 37.5%;
-    margin-right: 0.5em;
+    width: 47.5%;
+    margin: 0;
   }
 }
 
 .button-disabled {
-  width: 37.5%;
+  width: 47.5%;
   margin-left: 0.5em;
   padding: 1em;
   font-size: 0.6em;

@@ -6,9 +6,31 @@
 .daily-traffic,
 .mobile-users,
 .recent-activity,
-.new-members {
+.new-members,
+.message {
   border-top: 1px solid $border-color;
   border-bottom: 1px solid $border-color;
+}
+
+.message {
+  @include mq(medium) {
+    border: none;
+  }
+}
+
+.message-form {
+  margin-bottom: 1em;
+  @include mq(medium) {
+    margin-bottom: 0;
+  }
+}
+
+.settings,
+.mobile-users,
+.recent-activity {
+  @include mq(medium) {
+    border-left: 1px solid $border-color;
+  }
 }
 
 // search banner-----
@@ -35,8 +57,10 @@
   padding: 0.5em;
   border-radius: 15px;
   &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
     background-color: $green;
-    color: white;
   }
 }
 
@@ -45,9 +69,16 @@
 .social-container {
   @include bkgNborder {
   }
-  margin: 0 1em 1em 1em;
+  margin: 1em auto;
+  width: 90%;
+  @include mq(medium) {
+    margin: 0.5em;
+    padding-left: 0.25em;
+  }
 }
-
+.social-container-wrapper {
+  margin-bottom: 1em;
+}
 // New members-----
 
 .new-members {
@@ -76,7 +107,8 @@
 // settings-----
 
 .settings-button {
-  text-align: center;
+  width: 90%;
+  margin: 1em auto 0 auto;
 }
 .slider-1,
 .slider-2 {

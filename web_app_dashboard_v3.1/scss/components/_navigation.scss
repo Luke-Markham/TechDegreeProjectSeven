@@ -5,8 +5,20 @@
   padding: 0.25em 0 0.09em 0;
 }
 
+.nav-icon {
+  @include mq(medium) {
+    margin: 0.5em 0;
+    width: 85%;
+    padding-left: 0.3em;
+    padding-top: 0.25em;
+  }
+}
+
 .nav-icon:hover {
   box-shadow: inset 0px -2px $green;
   transform: scale(1.1);
-  // border-bottom: 2px inset red;
+
+  @include mq(medium) {
+    box-shadow: inset 3px 0px $green;
+  }
 }

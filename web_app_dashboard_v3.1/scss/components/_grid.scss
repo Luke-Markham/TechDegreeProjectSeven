@@ -10,6 +10,39 @@
 
 .main-content {
   grid-area: main-content;
+  display: grid;
+  @include mq(medium) {
+    grid-template-columns: 50%;
+  }
+}
+
+.main-content-header,
+.alert-message,
+.traffic,
+.social-media {
+  @include mq(medium) {
+    grid-column: 1 / span 2;
+  }
+}
+
+.daily-traffic,
+.new-members,
+.message {
+  @include mq(medium) {
+    grid-column: 1 / span 1;
+  }
+}
+
+.mobile-user,
+.recent-activity,
+.settings {
+  @include mq(medium) {
+    grid-column: 2 / span 1;
+  }
+}
+
+.footer {
+  grid-area: footer;
 }
 
 .grid-container {
@@ -20,4 +53,11 @@
     "header "
     "nav"
     "main-content";
+  @include mq(medium) {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav main-content"
+      "nav footer";
+  }
 }

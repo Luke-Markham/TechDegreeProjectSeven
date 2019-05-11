@@ -2,6 +2,10 @@
 
 .nav {
   @include flex($just: center, $align-i: center) {
+    @include mq(medium) {
+      @include flex($dir: column, $just: flex-start, $align-i: center) {
+      }
+    }
   }
 }
 
@@ -46,6 +50,13 @@
   }
 }
 
+.social-container-wrapper {
+  @include mq(medium) {
+    @include flex($dir: row) {
+    }
+  }
+}
+
 // members--
 
 .member-1,
@@ -60,10 +71,13 @@
 // message user--
 
 .message-form {
-  @include flex($dir: column, $align-i: center) {
+  @include flex($dir: column) {
   }
 }
-
+.message {
+  @include flex($dir: column, $align-i: space-between) {
+  }
+}
 // settings;
 .settings-wrapper {
   @include flex($dir: column) {
@@ -73,5 +87,10 @@
 .slider-1,
 .slider-2 {
   @include flex($align-i: center) {
+  }
+}
+
+.settings-button {
+  @include flex($just: space-between) {
   }
 }

@@ -1,4 +1,9 @@
 // Header ---------
+// .main-header-search {
+//   @include mq(medium) {
+//     padding: 0.25em 0;
+//   }
+// }
 
 .header {
   @include flex($dir: row, $just: flex-end) {
