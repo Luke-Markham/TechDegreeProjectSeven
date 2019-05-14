@@ -465,15 +465,6 @@ footer {
   }
 }
 
-.message-form {
-  margin-bottom: 1em;
-}
-@media (min-width: 768px) {
-  .message-form {
-    margin-bottom: 0;
-  }
-}
-
 @media (min-width: 768px) {
   .settings,
 .mobile-users,
@@ -560,7 +551,7 @@ footer {
 
 .settings-button {
   width: 90%;
-  margin: 1em auto;
+  margin: 1em auto 0.5em auto;
 }
 
 .slider-1,
@@ -909,8 +900,11 @@ footer {
 .new-members {
   display: flex;
   flex-direction: column;
-  justify-content: stretch;
-  flex-grow: 1;
+}
+
+.recent-activity {
+  display: flex;
+  flex-direction: column;
 }
 
 .member-1,
@@ -918,12 +912,8 @@ footer {
 .member-3,
 .member-4,
 .member-5 {
+  flex-grow: 1;
   display: flex;
-}
-
-.message-form {
-  display: flex;
-  flex-direction: column;
 }
 
 .message {
@@ -935,6 +925,16 @@ footer {
 .slider-2 {
   display: flex;
   align-items: center;
+}
+
+.message-area,
+.user-search {
+  flex-grow: 1;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
 }
 
 .settings-button {
@@ -1108,6 +1108,20 @@ input:checked + .slider:before {
   display: block;
   font-size: 0.75em;
   font-weight: 300;
+}
+
+.message-area,
+.user-search {
+  flex-grow: 1;
+}
+
+.settingsForm1 {
+  margin-top: auto;
+  flex-grow: 1;
+}
+
+.settings-button {
+  margin-bottom: 0.5em;
 }
 
 .widget-container-full,

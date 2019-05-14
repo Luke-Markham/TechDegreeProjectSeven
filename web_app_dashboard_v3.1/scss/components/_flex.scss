@@ -66,12 +66,13 @@
   }
 }
 
-// members--
-
+// members &  recent activity--
 .new-members {
-  @include flex($dir: column, $just: stretch) {
-    flex-grow: 1;
-  }
+  @include flex($dir: column);
+}
+
+.recent-activity {
+  @include flex($dir: column);
 }
 
 .member-1,
@@ -79,16 +80,13 @@
 .member-3,
 .member-4,
 .member-5 {
+  flex-grow: 1;
   @include flex() {
   }
 }
 
 // message user--
 
-.message-form {
-  @include flex($dir: column) {
-  }
-}
 .message {
   @include flex($dir: column) {
   }
@@ -99,7 +97,15 @@
   @include flex($align-i: center) {
   }
 }
-
+.message-area,
+.user-search {
+  flex-grow: 1;
+}
+// settings
+.settings {
+  @include flex($dir: column) {
+  }
+}
 .settings-button {
   @include flex($just: space-between) {
   }
