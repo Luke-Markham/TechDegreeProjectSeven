@@ -1,3 +1,18 @@
+// notification box
+const bellNotification = document.querySelector('.notify-bell');
+const notifications = document.querySelector('.notifications');
+const closeNotifications = document.querySelector('.close-notifications');
+const notificationMarker = document.querySelector('.notification-marker');
+
+bellNotification.addEventListener('click', () => {
+  notifications.style.display = 'flex';
+});
+
+closeNotifications.addEventListener('click', () => {
+  notifications.style.display = 'none';
+  notificationMarker.style.display = 'none';
+});
+
 // close alert ----
 
 const closeAlert = document.querySelector('.close-alert');
@@ -10,6 +25,7 @@ closeAlert.addEventListener('click', () => {
 // charts ----------------------
 
 // main traffic chart----------
+
 const trafficCanvas = document.querySelector('#traffic-chart');
 const trafficUl = document.querySelector('.timeline');
 const hourlyLi = document.querySelector('.hourly');
@@ -24,7 +40,8 @@ const hourlyDisplayChart = () => {
       '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00',
       '20:00', '21:00', '22:00', '23:00'],
     datasets: [{
-      data: [332, 324, 190, 42, 80, 500, 965, 1310, 1621, 2521, 2231, 2000, 3410, 3213, 1500, 1312, 1000, 940, 1300, 2421, 3000, 2313, 900, 821],
+      data: [332, 324, 190, 42, 80, 500, 965, 1310, 1621, 2521, 2231, 2000, 3410, 3213, 1500,
+        1312, 1000, 940, 1300, 2421, 3000, 2313, 900, 821],
       backgroundColor: 'rgba(116, 119, 191, .3)',
       borderWidth: 1,
     }],
@@ -173,7 +190,7 @@ dailyDisplayChart();
 const liReset = () => {
   hourlyLi.style.backgroundColor = '';
   hourlyLi.style.color = '#8f8f8f';
-  dailyLi.style.backgroundColor = '';
+  dailyLi.style.backgroundColor = 'transparent';
   dailyLi.style.color = '#8f8f8f';
   weeklyLi.style.backgroundColor = '';
   weeklyLi.style.color = '#8f8f8f';
@@ -197,6 +214,122 @@ trafficUl.addEventListener('click', (e) => {
     weeklyDisplayChart();
   } else if (clickTarget === 'monthly') {
     monthlyDisplayChart();
+  }
+});
+
+
+// daily traffic bar chart ----
+
+const dailyTrafficCanvas = document.querySelector('#daily-chart');
+const dailyData = {
+  labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'],
+  datasets: [{
+    data: [17231, 15230, 9231, 11231, 9000, 11123, 21802],
+    backgroundColor: 'rgba(116, 119, 191, .3)',
+    borderWidth: 1,
+  }],
+};
+const trafficOptions = {
+  aspectRatio: 2.5,
+  animation: {
+
+    duration: 750,
+
+  },
+  scales: {
+    yAxes: [{
+      ticks: {
+        beginAtZero: true,
+      },
+    }],
+  },
+  legend: {
+    display: false,
+  },
+};
+const dailyTrafficChart = new Chart(dailyTrafficCanvas, {
+  type: 'bar',
+  data: dailyData,
+  options: trafficOptions,
+});
+
+// mobile donut chart ----
+const mobileTrafficCanvas = document.querySelector('#mobile-chart');
+const mobileData = {
+  labels: ['IOS', 'Android', 'Other'],
+  datasets: [{
+    label: '# of Users',
+    data: [2000, 1200, 500],
+    borderWidth: 0,
+    backgroundColor: [
+      '#7477BF',
+      '#78CF82',
+      '#51B6C8',
+    ],
+  }],
+};
+const mobileOptions = {
+  legend: {
+    position: 'right',
+    labels: {
+      boxWidth: 20,
+      fontStyle: 'bold',
+    },
+  },
+};
+const mobileChart = new Chart(mobileTrafficCanvas, {
+  type: 'doughnut',
+  data: mobileData,
+  options: mobileOptions,
+});
+
+// messages --
+
+const sendMessageBtn = document.querySelector('.send-message');
+const messageArea = document.querySelector('.message-area');
+const userSearch = document.querySelector('.user-search');
+
+
+sendMessageBtn.addEventListener('click', () => {
+  const messageAreaValue = document.querySelector('.message-area').value;
+  const userSearchValue = document.querySelector('.user-search').value;
+
+  if (messageAreaValue === '' && userSearchValue === '') {
+    document.querySelector('.message-area').value = 'Please enter a valid message before sending.';
+    document.querySelector('.user-search').value = 'Please enter a recipient before sending.';
+    messageArea.style.color = 'red';
+    userSearch.style.color = 'red';
+  } else if (messageAreaValue === '') {
+    document.querySelector('.message-area').value = 'Please enter a valid message before sending.';
+    messageArea.style.color = 'red';
+  } else if (userSearchValue === '') {
+    document.querySelector('.user-search').value = 'Please enter a recipient before sending.';
+    userSearch.style.color = 'red';
+  } else {
+    document.querySelector('.message-area').value = `Message successfully sent to ${userSearchValue}`;
+    messageArea.style.color = '#81c98f';
+  }
+});
+
+
+// Failure/success message will be cleared.
+// if field was not empty and user clicked away and comes back value wil remain for editing.
+userSearch.addEventListener('click', () => {
+  if (userSearch.value === 'Please enter a recipient before sending.') {
+    document.querySelector('.user-search').value = '';
+    userSearch.style.color = 'black';
+  } else {
+  // leaves the field untouched for editing
+  }
+});
+
+messageArea.addEventListener('click', () => {
+  const userSearchValue = document.querySelector('.user-search').value;
+  if (messageArea.value === 'Please enter a valid message before sending.' || messageArea.value === `Message successfully sent to ${userSearchValue}`) {
+    document.querySelector('.message-area').value = '';
+    messageArea.style.color = 'black';
+  } else {
+  // leaves the field untouched for editing
   }
 });
 
@@ -234,3 +367,64 @@ function privacyChecked() {
     off2.style.display = 'inline-block';
   }
 }
+
+// local storage --------------------
+
+const saveBtn = document.querySelector('#save');
+const sliderSettings1 = document.querySelector('.slider-storage-1');
+const sliderSettings2 = document.querySelector('.slider-storage-2');
+const timezoneInput = document.querySelector('#timezone');
+const previouslySelected = localStorage.getItem('selectedTimezone');
+
+// save settings --
+
+saveBtn.addEventListener('click', () => {
+  // slider1
+  if (sliderSettings1.innerText === 'OFF') {
+    localStorage.setItem('notifications', 'off');
+  } else if (sliderSettings1.innerText === 'ON') {
+    localStorage.setItem('notifications', 'on');
+  }
+  // slider2
+  if (sliderSettings2.innerText === 'OFF') {
+    localStorage.setItem('privacy', 'off');
+  } else if (sliderSettings2.innerText === 'ON') {
+    localStorage.setItem('privacy', 'on');
+  }
+  //  timezone
+  const timezoneValue = document.querySelector('#timezone').value;
+  localStorage.setItem('selectedTimezone', timezoneValue);
+});
+
+
+if (localStorage.notifications === 'off') {
+
+} else if (localStorage.notifications === 'on') {
+  notificationsChecked();
+}
+
+if (localStorage.privacy === 'off') {
+
+} else if (localStorage.privacy === 'on') {
+  privacyChecked();
+}
+
+if (previouslySelected === null) {
+
+} else {
+  timezoneInput.value = previouslySelected;
+}
+
+
+// cancel/reset settings
+const cancelBtn = document.querySelector('#cancel');
+
+cancelBtn.addEventListener('click', () => {
+  localStorage.clear();
+  on1.style.display = 'none';
+  off1.style.display = 'inline-block';
+  slider1.removeAttribute('checked', 'checked');
+  on2.style.display = 'none';
+  off2.style.display = 'inline-block';
+  slider2.removeAttribute('checked', 'checked');
+});

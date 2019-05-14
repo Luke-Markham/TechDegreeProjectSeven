@@ -1,13 +1,22 @@
+.close-notifications {
+  height: 20px;
+  padding-top: 0.5em;
+  color: black;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 .close-alert {
   color: white;
-  background-color: $base;
+  background-color: transparent;
   border-style: none;
   border-radius: 3px;
   outline: none;
   font-size: 1em;
 
   &:hover {
-    color: $green;
+    transform: scale(1.1);
   }
 }
 

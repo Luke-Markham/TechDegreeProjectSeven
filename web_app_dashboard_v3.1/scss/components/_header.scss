@@ -1,19 +1,46 @@
 // Header ---------
-// .main-header-search {
-//   @include mq(medium) {
-//     padding: 0.25em 0;
-//   }
-// }
 
 .header {
-  @include flex($dir: row, $just: flex-end) {
-  }
   background-color: $base;
   padding: 0.25em 0;
 }
 
 .notifications {
   display: none;
+  position: absolute;
+  right: 125px;
+  top: 30px;
+  padding-left: 0.5em;
+  background-color: $base-secondary-bkg;
+  border: 2px solid $base;
+  border-radius: 5px;
+}
+
+.notification-marker {
+  position: absolute;
+  right: 114px;
+  top: 17.5px;
+  background-color: $green;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.notification-hover:hover {
+  transform: scale(1.1);
+  .notification-marker {
+    right: 10px;
+    top: 14px;
+  }
+}
+.note-1,
+.note-2,
+.note-3 {
+  padding: 0.25em 0;
+  color: black;
+  & + li {
+    color: $green;
+  }
 }
 
 .profile {

@@ -188,9 +188,9 @@ select {
    * Correct the inability to style clickable types in iOS and Safari.
    */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -198,9 +198,9 @@ button,
    * Remove the inner border and padding in Firefox.
    */
 button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
@@ -209,9 +209,9 @@ button::-moz-focus-inner,
    * Restore the focus styles unset by the previous rule.
    */
 button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
   outline: 1px dotted ButtonText;
 }
 
@@ -261,8 +261,8 @@ textarea {
    * 1. Add the correct box sizing in IE 10.
    * 2. Remove the padding in IE 10.
    */
-[type="checkbox"],
-[type="radio"] {
+[type=checkbox],
+[type=radio] {
   box-sizing: border-box;
   /* 1 */
   padding: 0;
@@ -272,8 +272,8 @@ textarea {
 /**
    * Correct the cursor style of increment and decrement buttons in Chrome.
    */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -281,7 +281,7 @@ textarea {
    * 1. Correct the odd appearance in Chrome and Safari.
    * 2. Correct the outline style in Safari.
    */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield;
   /* 1 */
   outline-offset: -2px;
@@ -291,7 +291,7 @@ textarea {
 /**
    * Remove the inner padding in Chrome and Safari on macOS.
    */
-[type="search"]::-webkit-search-decoration {
+[type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -357,21 +357,66 @@ a {
 input {
   outline: none;
 }
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
 
 footer {
   height: 2em;
 }
 
+datalist {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  backdrop-filter: red;
+  background-color: blue;
+}
+
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   background-color: #7477bf;
   padding: 0.25em 0;
 }
 
 .notifications {
   display: none;
+  position: absolute;
+  right: 125px;
+  top: 30px;
+  padding-left: 0.5em;
+  background-color: #fbfbfb;
+  border: 2px solid #7477bf;
+  border-radius: 5px;
+}
+
+.notification-marker {
+  position: absolute;
+  right: 114px;
+  top: 17.5px;
+  background-color: #81c98f;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.notification-hover:hover {
+  transform: scale(1.1);
+}
+.notification-hover:hover .notification-marker {
+  right: 10px;
+  top: 14px;
+}
+
+.note-1,
+.note-2,
+.note-3 {
+  padding: 0.25em 0;
+  color: black;
+}
+.note-1 + li,
+.note-2 + li,
+.note-3 + li {
+  color: #81c98f;
 }
 
 .profile {
@@ -435,8 +480,8 @@ footer {
 
 @media (min-width: 768px) {
   .settings,
-  .mobile-users,
-  .recent-activity {
+.mobile-users,
+.recent-activity {
     border-left: 1px solid #dbdbdb;
   }
 }
@@ -466,6 +511,13 @@ footer {
 }
 .time:hover {
   transform: scale(1.1);
+}
+.time:active {
+  background-color: #81c98f;
+}
+
+.daily {
+  background-color: #81c98f;
 }
 
 .social-container {
@@ -591,6 +643,10 @@ footer {
   color: #8f8f8f;
 }
 
+.timeline li:nth-child(2) {
+  color: white;
+}
+
 @media (min-width: 768px) {
   .social-text {
     margin-left: 0.25em;
@@ -652,16 +708,25 @@ footer {
   font-weight: 700;
 }
 
+.close-notifications {
+  height: 20px;
+  padding-top: 0.5em;
+  color: black;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 .close-alert {
   color: white;
-  background-color: #7477bf;
+  background-color: transparent;
   border-style: none;
   border-radius: 3px;
   outline: none;
   font-size: 1em;
 }
 .close-alert:hover {
-  color: #81c98f;
+  transform: scale(1.1);
 }
 
 .button-primary {
@@ -717,26 +782,26 @@ footer {
 
 @media (min-width: 768px) {
   .main-content-header,
-  .alert-message,
-  .traffic,
-  .social-media {
-    grid-column: 1 / span 2;
+.alert-message,
+.traffic,
+.social-media {
+    grid-column: 1/span 2;
   }
 }
 
 @media (min-width: 768px) {
   .daily-traffic,
-  .new-members,
-  .message {
-    grid-column: 1 / span 1;
+.new-members,
+.message {
+    grid-column: 1/span 1;
   }
 }
 
 @media (min-width: 768px) {
   .mobile-user,
-  .recent-activity,
-  .settings {
-    grid-column: 2 / span 1;
+.recent-activity,
+.settings {
+    grid-column: 2/span 1;
   }
 }
 
@@ -755,6 +820,12 @@ footer {
     grid-template-columns: 55px 1fr;
     grid-template-areas: "header header" "nav main-content" "nav footer";
   }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .nav {
@@ -857,9 +928,6 @@ footer {
   width: 20px;
   height: 20px;
   fill: white;
-}
-.notify-bell:hover {
-  transform: scale(1.1);
 }
 
 .profile-pic {
@@ -1037,7 +1105,7 @@ input:checked + .slider:before {
 }
 @media (min-width: 768px) {
   #daily-chart,
-  #mobile-chart {
+#mobile-chart {
     width: 45vw;
   }
 }
