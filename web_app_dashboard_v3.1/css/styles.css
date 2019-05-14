@@ -650,6 +650,10 @@ footer {
   color: white;
 }
 
+.timeline:active {
+  color: white;
+}
+
 @media (min-width: 768px) {
   .social-text {
     margin-left: 0.25em;
@@ -864,6 +868,8 @@ footer {
 .timeline {
   display: flex;
   justify-content: flex-end;
+  width: 15%;
+  margin-left: auto;
 }
 
 .social-image {

@@ -39,6 +39,8 @@
 .timeline {
   @include flex($just: flex-end) {
   }
+  width: 15%;
+  margin-left: auto;
 }
 
 // social icons--

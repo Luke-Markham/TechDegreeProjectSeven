@@ -188,13 +188,13 @@ dailyDisplayChart();
 // This function resets li styling after clicking another li
 
 const liReset = () => {
-  hourlyLi.style.backgroundColor = '';
+  hourlyLi.style.backgroundColor = 'transparent';
   hourlyLi.style.color = '#8f8f8f';
   dailyLi.style.backgroundColor = 'transparent';
   dailyLi.style.color = '#8f8f8f';
-  weeklyLi.style.backgroundColor = '';
+  weeklyLi.style.backgroundColor = 'transparent';
   weeklyLi.style.color = '#8f8f8f';
-  monthlyLi.style.backgroundColor = '';
+  monthlyLi.style.backgroundColor = 'transparent';
   monthlyLi.style.color = '#8f8f8f';
 };
 
@@ -203,8 +203,9 @@ trafficUl.addEventListener('click', (e) => {
   const clickTargetStyle = e.target;
   const clickTarget = e.target.innerText.toLowerCase();
   liReset();
-  clickTargetStyle.style.backgroundColor = '#81c98f';
   clickTargetStyle.style.color = 'white';
+  clickTargetStyle.style.backgroundColor = '#81c98f';
+
 
   if (clickTarget === 'hourly') {
     hourlyDisplayChart();
