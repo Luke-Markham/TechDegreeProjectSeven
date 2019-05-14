@@ -688,6 +688,16 @@ footer {
   color: #81c98f;
 }
 
+.arrow {
+  color: #7477bf;
+  height: 20px;
+  width: 20px;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  display: inline-block;
+  transform: scale(1.5);
+}
+
 .settings label {
   font-size: 0.75em;
 }
@@ -896,6 +906,13 @@ footer {
   }
 }
 
+.new-members {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  flex-grow: 1;
+}
+
 .member-1,
 .member-2,
 .member-3,
@@ -1089,7 +1106,7 @@ input:checked + .slider:before {
 #timezone {
   margin-top: 2.5em;
   display: block;
-  font-size: 1em;
+  font-size: 0.75em;
   font-weight: 300;
 }
 

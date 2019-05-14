@@ -68,6 +68,12 @@
 
 // members--
 
+.new-members {
+  @include flex($dir: column, $just: stretch) {
+    flex-grow: 1;
+  }
+}
+
 .member-1,
 .member-2,
 .member-3,
