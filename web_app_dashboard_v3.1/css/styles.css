@@ -212,7 +212,7 @@ button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: 1px dotted;
 }
 
 /**
@@ -354,6 +354,10 @@ a {
   text-decoration: none;
 }
 
+hr {
+  width: 90%;
+}
+
 input {
   outline: none;
 }
@@ -363,14 +367,6 @@ input::-webkit-calendar-picker-indicator {
 
 footer {
   height: 2em;
-}
-
-datalist {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  backdrop-filter: red;
-  background-color: blue;
 }
 
 .header {
@@ -564,7 +560,7 @@ datalist {
 
 .settings-button {
   width: 90%;
-  margin: 2em auto 1em auto;
+  margin: 1em auto;
 }
 
 .slider-1,
@@ -910,7 +906,6 @@ datalist {
 .message {
   display: flex;
   flex-direction: column;
-  align-items: space-between;
 }
 
 .slider-1,
@@ -964,7 +959,10 @@ datalist {
   border-radius: 50%;
 }
 
-#Layer_1 {
+#layer_1,
+#layer_2,
+#layer_3,
+#layer_4 {
   padding-top: 0.25em;
 }
 
@@ -1083,6 +1081,7 @@ input:checked + .slider:before {
 }
 
 #timezone {
+  margin-top: 2.5em;
   display: block;
   font-size: 1em;
 }

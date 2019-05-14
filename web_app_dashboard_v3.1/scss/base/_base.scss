@@ -14,6 +14,10 @@ a {
   text-decoration: none;
 }
 
+hr {
+  width: 90%;
+}
+
 input {
   outline: none;
   &::-webkit-calendar-picker-indicator {
@@ -23,12 +27,4 @@ input {
 
 footer {
   height: 2em;
-}
-
-datalist {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  backdrop-filter: red;
-  background-color: blue;
 }
