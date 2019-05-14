@@ -289,6 +289,15 @@ const mobileChart = new Chart(mobileTrafficCanvas, {
 const sendMessageBtn = document.querySelector('.send-message');
 const messageArea = document.querySelector('.message-area');
 const userSearch = document.querySelector('.user-search');
+const membersList = document.querySelector('.members-list');
+// console.log(membersList.options[0].innerText);
+
+// for (let i = 0; i < membersList.options.length; i++) {
+//   // console.log(membersList.options[i].innerText);
+//   if (userSearchValue !== membersList.options[i].innerText) {
+//     console.log(winner);
+//   }
+// }
 
 
 sendMessageBtn.addEventListener('click', () => {
@@ -306,10 +315,25 @@ sendMessageBtn.addEventListener('click', () => {
   } else if (userSearchValue === '') {
     document.querySelector('.user-search').value = 'Please enter a recipient before sending.';
     userSearch.style.color = 'red';
+  } else if (userSearchValue === 'Please enter a recipient before sending.'
+  && messageAreaValue === 'Please enter a valid message before sending.') {
+    null;
+  } else if (userSearchValue === 'Please enter a recipient before sending.'
+  || messageAreaValue === 'Please enter a valid message before sending.') {
+    null;
   } else {
     document.querySelector('.message-area').value = `Message successfully sent to ${userSearchValue}`;
     messageArea.style.color = '#81c98f';
   }
+
+  // for (let i = 0; i < membersList.options.length; i++) {
+  //   const memberText = membersList.options[i].innerText;
+
+  //   if (userSearchValue.toLowerCase() !== memberText.toLowerCase()) {
+  //     document.querySelector('.user-search').value = 'Please enter a valid recipient before sending';
+  //     userSearch.style.color = 'red';
+  //   }
+  // }
 });
 
 

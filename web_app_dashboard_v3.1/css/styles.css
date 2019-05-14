@@ -212,7 +212,7 @@ button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
 [type=submit]:-moz-focusring {
-  outline: 1px dotted;
+  outline: 1px dotted ButtonText;
 }
 
 /**
@@ -1090,6 +1090,7 @@ input:checked + .slider:before {
   margin-top: 2.5em;
   display: block;
   font-size: 1em;
+  font-weight: 300;
 }
 
 .widget-container-full,
