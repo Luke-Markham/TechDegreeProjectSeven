@@ -387,7 +387,7 @@ footer {
 
 .notification-marker {
   position: absolute;
-  right: 114px;
+  right: 132.5px;
   top: 17.5px;
   background-color: #81c98f;
   width: 10px;
@@ -583,7 +583,8 @@ footer {
 
 .profile-name {
   color: white;
-  margin-right: 0.75em;
+  margin-right: 1.75em;
+  margin-left: 0.5em;
   font-size: 0.75em;
   display: inline-block;
   margin-bottom: 0;
@@ -616,7 +617,7 @@ footer {
 }
 
 .alert-message p {
-  font-size: 0.6em;
+  font-size: 0.75em;
   color: white;
   padding: 0.75em;
   margin: 0.25em 0em;
@@ -747,6 +748,7 @@ footer {
   border-radius: 5px;
   outline: none;
   align-self: flex-end;
+  border: none;
 }
 .button-primary:hover {
   background-color: #9799cf;
@@ -765,6 +767,7 @@ footer {
   color: white;
   border-radius: 5px;
   outline: none;
+  border: none;
 }
 .button-disabled:hover {
   background-color: #999999;
@@ -943,7 +946,7 @@ footer {
 }
 
 .notify-bell {
-  margin-top: 0.8em;
+  margin-top: 0.6em;
   margin-right: 0.5em;
   width: 20px;
   height: 20px;
@@ -1110,18 +1113,9 @@ input:checked + .slider:before {
   font-weight: 300;
 }
 
-.message-area,
-.user-search {
-  flex-grow: 1;
-}
-
 .settingsForm1 {
   margin-top: auto;
   flex-grow: 1;
-}
-
-.settings-button {
-  margin-bottom: 0.5em;
 }
 
 .widget-container-full,
