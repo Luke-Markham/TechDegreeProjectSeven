@@ -26,11 +26,13 @@
   border-radius: 50%;
 }
 
-.notification-hover:hover {
-  transform: scale(1.1);
-  .notification-marker {
-    right: 10px;
-    top: 14px;
+.notification-hover {
+  &:hover {
+    transform: scale(1.1);
+    .notification-marker {
+      right: 10px;
+      top: 14px;
+    }
   }
 }
 .note-1,

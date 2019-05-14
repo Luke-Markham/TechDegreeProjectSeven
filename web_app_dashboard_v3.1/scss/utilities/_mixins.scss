@@ -30,7 +30,7 @@
       @content;
     }
   } @else if $break == "large" {
-    @media (min-width: $brk-s) {
+    @media (min-width: $brk-l) {
       @content;
     }
   }

@@ -1,5 +1,5 @@
 // notification box
-const bellNotification = document.querySelector('.notify-bell');
+const bellNotification = document.querySelector('.notification-hover');
 const notifications = document.querySelector('.notifications');
 const closeNotifications = document.querySelector('.close-notifications');
 const notificationMarker = document.querySelector('.notification-marker');
@@ -259,8 +259,8 @@ const mobileData = {
   labels: ['IOS', 'Android', 'Other'],
   datasets: [{
     label: '# of Users',
-    data: [2000, 1200, 500],
-    borderWidth: 0,
+    data: [9045, 4757, 1001],
+    borderWidth: 1,
     backgroundColor: [
       '#7477BF',
       '#78CF82',
@@ -370,38 +370,32 @@ function privacyChecked() {
 
 // local storage --------------------
 
-const saveBtn = document.querySelector('#save');
+
+// Email notification storage --
+
 const sliderSettings1 = document.querySelector('.slider-storage-1');
-const sliderSettings2 = document.querySelector('.slider-storage-2');
-const timezoneInput = document.querySelector('#timezone');
-const previouslySelected = localStorage.getItem('selectedTimezone');
-
-// save settings --
-
-saveBtn.addEventListener('click', () => {
-  // slider1
+sliderSettings1.addEventListener('mouseout', () => {
   if (sliderSettings1.innerText === 'OFF') {
     localStorage.setItem('notifications', 'off');
   } else if (sliderSettings1.innerText === 'ON') {
     localStorage.setItem('notifications', 'on');
   }
-  // slider2
-  if (sliderSettings2.innerText === 'OFF') {
-    localStorage.setItem('privacy', 'off');
-  } else if (sliderSettings2.innerText === 'ON') {
-    localStorage.setItem('privacy', 'on');
-  }
-  //  timezone
-  const timezoneValue = document.querySelector('#timezone').value;
-  localStorage.setItem('selectedTimezone', timezoneValue);
 });
-
-
 if (localStorage.notifications === 'off') {
 
 } else if (localStorage.notifications === 'on') {
   notificationsChecked();
 }
+
+// Privacy storage --
+const sliderSettings2 = document.querySelector('.slider-storage-2');
+sliderSettings2.addEventListener('mouseout', () => {
+  if (sliderSettings2.innerText === 'OFF') {
+    localStorage.setItem('privacy', 'off');
+  } else if (sliderSettings2.innerText === 'ON') {
+    localStorage.setItem('privacy', 'on');
+  }
+});
 
 if (localStorage.privacy === 'off') {
 
@@ -409,15 +403,25 @@ if (localStorage.privacy === 'off') {
   privacyChecked();
 }
 
+//  timezone storage --
+const timezoneInput = document.querySelector('#timezone');
+
+timezoneInput.addEventListener('change', () => {
+  const timezoneValue = document.querySelector('#timezone').value;
+  localStorage.setItem('selectedTimezone', timezoneValue);
+});
+
+const previouslySelected = localStorage.getItem('selectedTimezone');
+
 if (previouslySelected === null) {
 
 } else {
   timezoneInput.value = previouslySelected;
 }
 
-
-// cancel/reset settings
+// cancel settings ----------------------------
 const cancelBtn = document.querySelector('#cancel');
+
 
 cancelBtn.addEventListener('click', () => {
   localStorage.clear();
@@ -428,3 +432,65 @@ cancelBtn.addEventListener('click', () => {
   off2.style.display = 'inline-block';
   slider2.removeAttribute('checked', 'checked');
 });
+
+
+// THE BELOW CODE CREATES GIVES THE SAVE BUTTON FUNCTIONALITY
+// REPLACE ABOVE CODE WITH BELOW IF WANTING THIS FUNCTION
+
+
+// const saveBtn = document.querySelector('#save');
+// const sliderSettings1 = document.querySelector('.slider-storage-1');
+// const sliderSettings2 = document.querySelector('.slider-storage-2');
+// const timezoneInput = document.querySelector('#timezone');
+// const previouslySelected = localStorage.getItem('selectedTimezone');
+
+// saveBtn.addEventListener('click', () => {
+//   // slider1
+//   if (sliderSettings1.innerText === 'OFF') {
+//     localStorage.setItem('notifications', 'off');
+//   } else if (sliderSettings1.innerText === 'ON') {
+//     localStorage.setItem('notifications', 'on');
+//   }
+//   // slider2
+//   if (sliderSettings2.innerText === 'OFF') {
+//     localStorage.setItem('privacy', 'off');
+//   } else if (sliderSettings2.innerText === 'ON') {
+//     localStorage.setItem('privacy', 'on');
+//   }
+//   //  timezone
+//   const timezoneValue = document.querySelector('#timezone').value;
+//   localStorage.setItem('selectedTimezone', timezoneValue);
+// });
+
+
+// if (localStorage.notifications === 'off') {
+
+// } else if (localStorage.notifications === 'on') {
+//   notificationsChecked();
+// }
+
+// if (localStorage.privacy === 'off') {
+
+// } else if (localStorage.privacy === 'on') {
+//   privacyChecked();
+// }
+
+// if (previouslySelected === null) {
+
+// } else {
+//   timezoneInput.value = previouslySelected;
+// }
+
+
+// // cancel/reset settings
+// const cancelBtn = document.querySelector('#cancel');
+
+// cancelBtn.addEventListener('click', () => {
+//   localStorage.clear();
+//   on1.style.display = 'none';
+//   off1.style.display = 'inline-block';
+//   slider1.removeAttribute('checked', 'checked');
+//   on2.style.display = 'none';
+//   off2.style.display = 'inline-block';
+//   slider2.removeAttribute('checked', 'checked');
+// });
