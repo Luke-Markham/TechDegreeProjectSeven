@@ -377,8 +377,8 @@ footer {
 .notifications {
   display: none;
   position: absolute;
-  right: 125px;
-  top: 30px;
+  right: 140px;
+  top: 28px;
   padding-left: 0.5em;
   background-color: #fbfbfb;
   border: 2px solid #7477bf;
